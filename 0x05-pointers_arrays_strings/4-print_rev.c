@@ -13,13 +13,15 @@ void print_rev(char *s)
 
 	l = 0;
 
-	for (c = 1 ; s[c] != '\0' ; c++)
+	for (c = 0 ; s[c] != '\0' ; c++)
 	{
 		l++;
 	}
-	for (c = l ; c >= 0 ; c--)
+	s--;
+	for (c = l ; c > 0 ; c--)
+	{
 
 		_putchar(s[c]);
-
+	}
 	_putchar('\n');
 }
