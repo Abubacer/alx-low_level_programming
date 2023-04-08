@@ -2,8 +2,8 @@
 
 /**
 * main - entry point
-* this program prints all possible combinations
-* of three digit numbers
+* this program all possible combinations
+* of two two digit numbers
 * the numbers separated by , followed by a space
 * the numbers are printed in ascending order
 * using putchar function
@@ -12,23 +12,31 @@
 
 int main(void)
 {
-	int n, i, x;
+	int n, i, x, y;
 
-	for (n = 0 ; n < 10 ; n++)
+	for (n = 0 ; n < 9 ; n++)
 	{
-	for (i = n + 1 ; i < 10 ; i++)
+	for (i = n + 1 ; i < 9 ; i++)
 	{
-	for (x = i + 1 ; x < 10 ; x++)
-	{
-	if (n != i && n != x)
+	if (n != i)
 	{
 		putchar(n + '0');
 		putchar(i + '0');
+		putchar(' ');
+	for (x = 0 ; x < 9 ; x++)
+	{
+	for (y = n + 1 ; y < 9 ; y++)
+	{
+	if (x != y)
+	{
 		putchar(x + '0');
-	if (n == 7 && i == 8 && x == 9)
+		putchar(y + '0');
+	if (n == 9 && i == 8 && x == 9 && y == 9)
 	continue;
 		putchar(',');
 		putchar(' ');
+	}
+	}
 	}
 	}
 	}
