@@ -17,22 +17,27 @@ char *str_concat(char *s1, char *s2)
 	if (s2 == 0)
 		s2 = "";
 
-	for (i = 0 ; s1[i] != '\0' ; i++)
-	for (j = 0 ; s2[j] != '\0' ; j++)
+	i = j = 0;
+	while (s1[i] != '\0')
+		i++;
+	while (s2[j] != '\0')
+		j++;
 
 	cstr = malloc(sizeof(char) * (i + j + 1));
 
 	if (cstr == 0)
 		return (0);
 
-	for (i = 0 ; s1[i] != '\0' ; i++)
+	i = j = 0;
+	while (s1[i] != '\0')
 	{
 		cstr[i] = s1[i];
+		i++;
 	}
-	for (j = 0 ; s2[j] != '\0' ; j++)
+	while (s2[j] != '\0')
 	{
 		cstr[i] = s2[j];
-		i++;
+		i++, j++;
 	}
 
 	cstr[i] = '\0';
