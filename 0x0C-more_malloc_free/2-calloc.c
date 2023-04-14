@@ -8,7 +8,7 @@
  * Return: a pointer to s
  */
 
-char *_memset(char *s, unsigned int c, unsigned int n)
+char *_memset(char *s, char c, unsigned int n)
 {
 	char *ptr;
 
