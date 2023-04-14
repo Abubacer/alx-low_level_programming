@@ -2,28 +2,28 @@
 
 /**
  * *_memset - a function that fills memory with a constant byte
- * @s: the array element
+ * @s: the memory to fill
  * @c: the constant byte
- * @n: the bytes to fill
+ * @n: the bytes to copy
  * Return: a pointer to s
  */
 
 char *_memset(char *s, char c, unsigned int n)
 {
-	char *ptr;
+	unsigned int i;
 
-	ptr = s;
+	for (i = 0 ; i < n ; i++)
+	{
+		s[i] = c;
+	}
 
-	while (n--)
-		*s++ = c;
-
-	return (ptr);
+	return (s);
 }
 
 
 /**
  * *_calloc - a function that allocates memory for an array
- * @nmemb: the array
+ * @nmemb: elements in the array
  * @size: the size of each element
  * Return: a pointer to the allocated memory
  * NULL if malloc fails
@@ -36,12 +36,12 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (size == 0 || nmemb == 0)
 		return (0);
 
-	mem = malloc(sizeof(int) * nmemb);
+	mem = malloc(size * nmemb);
 
 	if (mem == 0)
 		return (0);
 
-	_memset(mem, 0, sizeof(int) * nmemb);
+	_memset(mem, 0, nmemb * size);
 
 	return (mem);
 }
