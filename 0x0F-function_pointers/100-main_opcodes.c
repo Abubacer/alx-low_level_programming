@@ -12,7 +12,7 @@
 
 int main(int argc, char **argv)
 {
-	int i, numb;
+	int numb;
 	char *elemt;
 
 	elemt = (char *)main;
@@ -31,15 +31,8 @@ int main(int argc, char **argv)
 		exit(2);
 	}
 
-	for (i = 0; i < numb ; i++)
-	{
-		if (i == numb - 1)
-		{
-		printf("%02hhx\n", elemt[i]);
-		break;
-		}
-		printf("%02hhx", elemt[i]);
-	}
+	while (numb--)
+		printf("%02hhx%s", *elemt++, numb ? " " : "\n");
 	return (0);
 }
 
