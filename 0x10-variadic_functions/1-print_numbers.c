@@ -1,10 +1,10 @@
 #include "variadic_functions.h"
 
 /**
- * print_numbers - a function that prints numbers separeted
+ * print_numbers - a function that prints numbers separetely
  * followed by a new line
- * @separator: the string to print between numbers
- * @n: the numbers to be passed
+ * @separator: the string separator to print between strings
+ * @n: the numbers of arguments
  * @...: the numbers to print
  *
  * Return: void
