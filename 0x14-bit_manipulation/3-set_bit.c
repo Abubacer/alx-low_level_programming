@@ -3,7 +3,7 @@
 /**
  * set_bit - a function that sets the value of a bit to 1 at a given index
  * @n: the number to compute
- * @index: the index, starting from 0 of the bit you want to get
+ * @index: the index, starting from 0 of the bit to set
  *
  * Return: 1 on success
  *         or -1 if an error occured
