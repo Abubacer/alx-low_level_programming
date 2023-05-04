@@ -2,6 +2,7 @@
 
 /**
  * print_binary - a function that prints the binary representation of a number
+ * without using malloc, arrays or the % or / operators
  * @n: the number to print in binary representation
  *
  * Return: void
