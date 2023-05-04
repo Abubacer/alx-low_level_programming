@@ -16,6 +16,9 @@ unsigned int binary_to_uint(const char *b)
 
 	decml_num = 0;
 
+	if (!b)
+		return (0);
+
 	while (*b)
 	{
 		decml_num <<= 1;
