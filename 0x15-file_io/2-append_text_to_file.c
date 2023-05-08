@@ -19,7 +19,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	write_bytes = 0;
 
 	if (filename == 0)
-		return (0);
+		return (-1);
 
 	f_desc = open(filename, O_WRONLY | O_APPEND);
 
