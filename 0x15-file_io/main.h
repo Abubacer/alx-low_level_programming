@@ -15,6 +15,7 @@
 #define CLOSE_ERR "Error: Can't close fd %d\n"
 
 #define BUFSIZE 1024
+#define FILE_PERMSS 0644
 
 int _putchar(char c);
 ssize_t read_textfile(const char *filename, size_t letters);
