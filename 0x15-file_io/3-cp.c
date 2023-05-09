@@ -1,4 +1,6 @@
 #include "main.h"
+#define FILE_PERMSS 0664
+#define BUFSIZE 1024
 
 /**
  * main - a function that copies the content of a file to another file
