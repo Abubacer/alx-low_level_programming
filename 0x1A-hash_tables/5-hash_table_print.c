@@ -12,9 +12,7 @@ void hash_table_print(const hash_table_t *ht)
 {
 	hash_node_t *current;
 	unsigned long int i;
-	int notFirst;
-
-	notFirst = 0;
+	int isFirst = 1;
 
 	if (ht == NULL)
 		return;
@@ -25,10 +23,16 @@ void hash_table_print(const hash_table_t *ht)
 		current = ht->array[i];
 		while (current)
 		{
-			if (notFirst)
-				printf(", ");
-			printf("'%s': '%s'", current->key, current->value);
-			notFirst = 1;
+			if (isFirst)
+			{
+				printf("'%s': '%s'",
+					current->key, current->value);
+				isFirst = 0;
+			}
+			else
+				printf(", '%s': '%s'",
+					current->key, current->value);
+
 			current = current->next;
 		}
 	}
