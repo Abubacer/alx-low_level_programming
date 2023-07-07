@@ -1,4 +1,5 @@
 #include "hash_tables.h"
+
 /**
  * hash_table_set - a function that adds an element to the hash table.
  * @ht: the hash table to add or update the key/value to
@@ -12,14 +13,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int idx = key_index((const unsigned char *)key, ht->size);
 	hash_node_t *bucket, *newNode;
 
-	if (!ht || !*key || !key || !value)
+	if (!ht || !*key || !key)
 		return (0);
 
 	bucket = ht->array[idx];
 
 	while (bucket)
 	{
-		if (strcmp(key, bucket->key) == 0)
+		if (strcmp(bucket->key, key) == 0)
 		{
 			free(bucket->value);
 			bucket->value = strdup(value);
@@ -29,24 +30,21 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		bucket = bucket->next;
 	}
-	newNode = calloc(1, sizeof(hash_node_t));
+	newNode = malloc(sizeof(hash_node_t));
 	if (newNode == NULL)
 		return (0);
 
 	newNode->key = strdup(key);
-	if (newNode->key == NULL)
-	{
-		free(newNode);
-		return (0);
-	}
 	newNode->value = strdup(value);
-	if  (newNode->value == NULL)
+	if (newNode->key == NULL || newNode->value == NULL)
 	{
+		free(newNode->key);
 		free(newNode->value);
 		free(newNode);
 		return (0);
 	}
 	newNode->next = ht->array[idx];
 	ht->array[idx] = newNode;
+
 	return (1);
 }
