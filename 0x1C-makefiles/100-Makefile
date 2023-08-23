@@ -5,14 +5,14 @@ OBJ = $(SRC:.c=.o)
 NAME = school
 HAS_M_H := $(wildcard m.h)
 
-ifneq ($(HAS_M_H),"")
+ifneq ($(HAS_M_H),)
 
 all: $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 .PHONY: clean
 clean:
-	$(RM) -f $(NAME) *~
+	$(RM) -f *~ $(NAME)
 
 .PHONY: oclean
 oclean:
