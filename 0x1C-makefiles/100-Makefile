@@ -8,7 +8,7 @@ HAS_M_H := $(wildcard m.h)
 ifneq ($(HAS_M_H),)
 
 all: $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(OBJ) -o $(NAME)
 
 .PHONY: clean
 clean:
